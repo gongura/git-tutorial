@@ -49,3 +49,6 @@ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git.
 to know remote url's
 
 git remote -v
+
+You can undo git add before commit with
+git reset
