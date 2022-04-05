@@ -1,0 +1,51 @@
+git-tutorial
+how to use git
+
+create the directory cd new directory
+=> git config --global user.email "mailid" => git config --global user.name "github username"
+after that initialise the git
+git init
+add changes to the repo
+git status git add git commit
+add remote origin to local repo
+git remote add origin git@github.com:gongura/git-tutorial.git
+git remote show origin
+
+git remote show origin
+to push the changes to the remote branch
+git push -u origin master
+create new branch and change the branch
+git branch newbranch git checkout newbranch do some changes git add git commit
+
+git push -u origin newbranch
+to merge the branch
+
+checkout to master branch
+git merge branchname
+
+to delete the branch in local
+git branch -d branchname
+to check wether branch is available or not
+git branch
+to delete branch in remote
+git push origin -d branch name
+to create the tag use
+git tag tagname
+tag details we can see by
+git show tagname
+git push origin tagname
+to delete tag
+git tag -d tagname
+to delete tag in remote
+git push origin -d tagname
+we can create a branch from a tag
+git checkout -b "branch name" "tag name"
+
+git tag "tagname" "commit number"
+
+========================================================================= to change remote url from http to ssh
+
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git.
+to know remote url's
+
+git remote -v
