@@ -52,3 +52,36 @@ git remote -v
 
 You can undo git add before commit with
 git reset
+
+to undo git add
+================
+git rm --cached <file> is actually the correct answer, if it is the initial import of <file> into the repository. 
+If you're trying to unstage a change to the file, git reset is the correct answer. 
+People saying that this answer is wrong are thinking of a different question
+
+to create alias
+===============
+git config --global alias.unadd 'reset HEAD --'
+git config --global alias.unstage 'reset HEAD --'
+git config --global core.editor "atom --wait"    ==> to set default editor
+
+difference between git fetch and git pull
+=========================================
+
+git fetch is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. 
+It’s more like just checking to see if there are any changes available).
+
+git pull on the other hand does that AND brings (copy) those changes from the remote repository.
+
+For example:
+
+git pull origin ankur bugfix
+The takeaway is to keep in mind that there generally are at least three copies of a project on your workstation.
+
+One copy is your own repository with your own commit history (the already saved one, so to say).
+The second copy is your working copy where you are editing and building (not committed yet to your repo).
+The third copy is your local “cached” copy of a remote repository (probably the original from where you cloned yours).
+You can use git fetch to know the changes done in the remote repo/branch since your last pull. This is useful to allow for checking before doing an actual pull, which could change files in your current branch and working copy (and potentially lose your changes, etc).
+
+git fetch    
+git diff ...origin
